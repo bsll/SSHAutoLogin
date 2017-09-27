@@ -1,7 +1,5 @@
 # SSHAutoLogin
-fork自别人的登录脚本，这里做了自定义的一些修改
-一个SSH登录服务器的shell脚本，通常我们使用ssh登录服务器都要自己输入密码，而且容易输入错误，
-每当遇到这种情况甚是苦恼，下定决心自己写一个不用输入密码自动登录ssh的shell脚本。
+fork自别人的登录脚本(https://github.com/jiangxianli/SSHAutoLogin)，这里做了自定义的一些修改,对于常用的服务器通常记住的是简称，或者ip最后一位，所以修改一下利用简称登录
 ## 添加配置
 在ssh_login文件中，修改以下配置
 ```shell
@@ -14,13 +12,13 @@ fork自别人的登录脚本，这里做了自定义的一些修改
 ```shell
     CONFIGS=(
     "服务器名称 22 220.181.57.217 root passphrase key ~/private_key.pem"
-    "新浪服务器 22 66.102.251.33 root sina.com"
+    "67 22 192.168.1.67 root 67"
 )
 ```
 或者在脚本同目录下新建一个文件server_config,按照以上格式写入文件，每个配置单独一行如下：
 ```
 服务器名称 22 220.181.57.217 root passphrase key ~/private_key.pem
-新浪服务器 22 66.102.251.33 root sina.com
+67 22 192.168.1.67 root 67test
 ```
 ## 使用
 1).给ssh_login文件执行的权限,并执行ssh_login

@@ -9,8 +9,8 @@
 index=0
 #配置服务器
 CONFIGS=(
-    "68 22 192.168.1.68 root 68"
-    "67 22 192.168.1.67 root 68"
+    "68 22 192.168.2.68 root 68"
+    "67 22 192.168.1.67 root 67"
 )
 #读取自定义服务器配置文件（server_config) 列表，合并服务器配置列表
 if [ -f server_config ]; then
@@ -95,8 +95,6 @@ function Search(){
     for ((i=0;i<${CONFIG_LENGTH};i++));
     do
         CONFIG=(${CONFIGS[$i]}) #将一维sites字符串赋值到数组
-        echo ${CONFIG[0]}
-        echo $1
         if [[ $1 == ${CONFIG[0]} ]]
         then
             index=$i
